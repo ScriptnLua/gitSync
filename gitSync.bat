@@ -1,6 +1,6 @@
 @echo off
- > %temp%\~tmp.vbs echo sUrl = "http://www.github.com/ScriptnLua/gitSync.zip" '-- replace with github repository url + a .zip at the end
->> %temp%\~tmp.vbs echo sFolder = "c:\Users\<username here!>\Desktop" '-- for gmod addons do C:\Program Files (x86)\Steam\SteamApps\common\Garrys Mod\garrysmod\addons
+ > %temp%\~tmp.vbs echo sUrl = "http://www.github.com/ScriptnLua/gitSync.zip" '--- replace with github repository url + a .zip at the end
+>> %temp%\~tmp.vbs echo sFolder = "c:\Users\<username here!>\Desktop" '--- for gmod addons do C:\Program Files (x86)\Steam\SteamApps\common\Garrys Mod\garrysmod\addons
 >> %temp%\~tmp.vbs (findstr "'--VBS" "%0" | findstr /v "findstr")
 cscript //nologo %temp%\~tmp.vbs
 del /q %temp%\~tmp.vbs
