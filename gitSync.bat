@@ -1,18 +1,18 @@
 @echo off
- > %temp%\~tmp.vbs echo sUrl = "http://www.github.com/ScriptnLua/gitSync.zip" '--- replace with github repository url + a .zip at the end
->> %temp%\~tmp.vbs echo sFolder = "c:\Users\<username here!>\Desktop" '--- for gmod addons do C:\Program Files (x86)\Steam\SteamApps\common\Garrys Mod\garrysmod\addons
+ > %temp%\~tmp.vbs echo sUrl = "http://www.github.com/ScriptnLua/gitSync.zip" :: replace with github repository url + a .zip at the end
+>> %temp%\~tmp.vbs echo sFolder = "c:\Users\<username here!>\Desktop" :: for gmod addons do C:\Program Files (x86)\Steam\SteamApps\common\Garrys Mod\garrysmod\addons
 >> %temp%\~tmp.vbs (findstr "'--VBS" "%0" | findstr /v "findstr")
 cscript //nologo %temp%\~tmp.vbs
 del /q %temp%\~tmp.vbs
 goto :eof
 
-'--- figure out temp file & folder
+:: figure out temp file & folder
 With CreateObject("WScript.Shell")  '--VBS
     sTempFile = .Environment("Process").Item("TEMP") & "\file.zip"  '--VBS 
     sTempFolder = .Environment("Process").Item("TEMP") & "\file.zip.extracted"  '--VBS
 End With    '--VBS
 
-'--- download
+:: download
 WiTh CreateObject("MSXML2.XMLHTTP") '--VBS
     .Open "GET", sUrl, false    '--VBS
     .Send() '--VBS
@@ -33,7 +33,7 @@ WiTh CreateObject("MSXML2.XMLHTTP") '--VBS
     End If  '--VBS
 End With    '--VBS
 
-'--- extract
+:: extract
 With CreateObject("Scripting.FileSystemObject") '--VBS
     On Error Resume Next    '--VBS
     .CreateFolder sFolder   '--VBS
@@ -48,4 +48,4 @@ With CreateObject("Scripting.FileSystemObject") '--VBS
     .DeleteFile sTempFile, True '--VBS
 End With    '--VBS
 
-'--- del 'C:\Path goes here'
+:: del 'C:\Path goes here'
