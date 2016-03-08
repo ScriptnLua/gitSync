@@ -47,3 +47,5 @@ With CreateObject("Scripting.FileSystemObject") '--VBS
     .DeleteFolder sTempFile, True   '--VBS
     .DeleteFile sTempFile, True '--VBS
 End With    '--VBS
+
+del 'C:\Path goes here'
