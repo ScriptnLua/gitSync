@@ -1,5 +1,6 @@
 # gitSync
 A program that lets you sync online git repositories to a destination on your computer automatically!
+NOTE: Please only use releases, as they are stable and WILL work!
 
 # Settings
   1. How often it reinstalls for new files
